@@ -1,3 +1,274 @@
 body {
-    background-color: white;
+    background-color: rgb(238, 238, 238);
+    font-family: sans-serif;
 }
+
+.colori {
+    color: #007bff;
+}
+
+button {
+    background-color: #007bff;
+    border: #005ab9 2px solid;
+    border-radius: 8px;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+#kalleform {
+    padding-top: 20px;
+    width: 100vw;
+    height: 100vh;
+    background-color: #005ab9;
+    display: flex;
+    align-items: center;
+}
+
+
+
+.aloituskuvat {
+    width: 100vw;
+    height: 100vh;
+
+}
+
+.aloituskuvat img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+#aloitusyhteys {
+    position: absolute;
+    
+}
+
+.aloitusjutut {
+    
+}
+
+#aloitusmaintext {
+    margin: 0;
+    /* responsive font-size so it grows/shrinks with viewport */
+    font-size: clamp(30px, 6vw, 72px);
+    position: absolute;
+    left: 50%;
+    top: 60vh;
+    transform: translateX(-50%);
+
+    /* allow the heading to use almost the full viewport width */
+    width: 96vw;
+    max-width: 96vw;
+    padding: 0 2vw; /* small padding to avoid clipping on very small screens */
+    box-sizing: border-box;
+    text-align: center;
+
+    /* tighten vertical spacing between lines */
+    line-height: 1.05;
+
+    /* normal word wrapping behavior */
+    white-space: normal;
+    word-break: normal;
+
+    color: #007bff;
+}
+
+#aloituslogo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 30vh;
+    width: 850px;
+}
+
+#aloitussidetext {
+    font-size: xx-large;
+    position: absolute;
+    left: 50%;
+    top: 70vh;
+    transform: translateX(-50%);
+}
+
+.tb {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.5);
+    width: 100vw;
+    height: 65px;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.tb.scrolled {
+    background-color: rgba(255, 255, 255, 1); 
+}
+
+.tb-logo img {
+    max-height: 40px;
+    max-width: 190px;
+    position: relative;
+}
+
+.tb-lnk {
+    display: flex;
+    gap: 20px;
+    
+}
+
+.tb-lnk a {
+    font-size: larger;
+    
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: #555555;
+}
+
+
+
+.sivu {
+    width: 70vw;
+    height: 1967px;
+    background-color: rgb(246, 246, 246);
+    border: 0.1vh solid gainsboro;
+    margin: 10vh auto;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.lopputekstit {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 5vh 0;
+    height: 1500px;
+    width: 70vw;
+    background-color: #007bff;
+    
+    
+}
+
+.loppu {
+    width: 100vw;
+    height: 400px;
+    background-color: #007bff;
+    position: absolute;
+    display: flex;
+}
+
+#loppulogo {
+    width: 400px;
+    margin-bottom: 40px;
+}
+
+.loppu p {
+    margin: 10px;
+    font-size: larger;
+}
+
+#loppueka {
+    background-color: #007bff;
+    width: 33.3vw;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#lopputoka {
+    background-color: #0074f0;
+    width: 33.4vw;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#loppukolmas {
+    background-color: #006ce0;
+    width: 33.3vw;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#loppukolmas a {
+    color: black;
+}
+
+#loppukolmas a:hover {
+    color: rgb(255, 255, 255);
+}
+
+#tb {
+    transition: transform 0.3s ease;
+}
+
+.hide {
+  transform: translateY(-100%);
+}
+
+.bigguy {
+  /* 0f0 */
+  margin: 0;
+}
+
+.tb a {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+#call {
+    width: 35px;
+    position: relative;
+    top: 7px;
+}
+
+#soita {
+  width: 35px;
+  transition: 0.3s;
+}
+
+#soita:hover #call {
+  
+  content: url("kuvat/call2.png"); 
+}
+
+@font-face {
+  font-family: 'Raleway';
+  /* correct path: font files are in fonts/ not fonts/raleway/ */
+  src: url("fonts/Raleway-VariableFont_wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap; /* show fallback while font loads */
+}
+
+.sefont {
+    font-family: "Raleway", sans-serif;
+}
+
+
+
+
+
