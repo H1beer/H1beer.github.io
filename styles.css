@@ -1,5 +1,5 @@
 body {
-    background-color: rgb(238, 238, 238);
+    background-color: rgb(255, 255, 255);
     font-family: sans-serif;
 }
 
@@ -12,6 +12,53 @@ button {
     border: #005ab9 2px solid;
     border-radius: 8px;
 }
+
+
+.form input, textarea {
+    width: 250px;
+    height: 35px;
+    margin: 5px 0;
+    background-color: rgb(238, 238, 238);
+    border: none;
+    font-size: large;
+    position: absolute;
+
+}
+
+
+
+.form input::placeholder {
+    font-size: large;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 60%;
+
+}
+
+.form textarea::placeholder {
+    font-size: large;
+    opacity: 60%;
+}
+
+input[type="number"] {
+    appearance: textfield;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.textarea {
+    resize: vertical;
+    min-height: 100px;
+    max-height: 200px;
+    width: 300px;
+}
+
+
 
 html, body {
   margin: 0;
@@ -103,9 +150,10 @@ html, body {
     width: 100vw;
     height: 65px;
     z-index: 100;
+
     display: flex;
-    justify-content: center;
-    align-items: center;
+    
+    
     transition: background-color 0.3s ease;
 }
 
@@ -117,12 +165,23 @@ html, body {
     max-height: 40px;
     max-width: 190px;
     position: relative;
+    
+}
+
+.tb-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 20px;
 }
 
 .tb-lnk {
     display: flex;
     gap: 20px;
-    
+    align-items: center;
+    position: absolute;
+    left: 48%;
+    transform: translateX(-50%);
 }
 
 .tb-lnk a {
@@ -143,13 +202,8 @@ a:hover {
 
 
 .sivu {
-    width: 70vw;
-    height: 1967px;
-    background-color: rgb(246, 246, 246);
-    border: 0.1vh solid gainsboro;
-    margin: 10vh auto;
-    border-radius: 10px;
-    padding: 20px;
+    font-size: x-large;
+    margin: 100px 0;
 }
 
 .lopputekstit {
@@ -170,6 +224,7 @@ a:hover {
     background-color: #007bff;
     position: absolute;
     display: flex;
+    color: white;
 }
 
 #loppulogo {

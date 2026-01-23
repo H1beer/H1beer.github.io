@@ -17,7 +17,9 @@ class MySiteElements extends HTMLElement {
             this.innerHTML = `
                 <div class="tb" id="tb">
                     <div class="tb-logo">
+                    <a href="index.html">
                         <img src="kuvat/putkiwattilogoval.png" alt="Putkiwatti">
+                    </a>
                     </div>
                     <div class="tb-lnk">
                         <div>
@@ -27,16 +29,13 @@ class MySiteElements extends HTMLElement {
 
                         </div>
                         <div>
-                            <a href=""><p>Jotain</p></a>
+                            <a href="index.html"><p>Aloitus</p></a>
                         </div>
                         <div id="galleria">
                             <a href="galleria.html"><p>Galleria</p></a>
                         </div>
                         <div id="yhteys">
                             <a href="yhteys.html"><p>Yhteystiedot</p></a>
-                        </div>
-                        <div id="soita">
-                            <img id="call" src="kuvat/call.png" alt="Soita">
                         </div>
                     </div>
                 </div>

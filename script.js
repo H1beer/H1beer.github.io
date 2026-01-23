@@ -22,10 +22,9 @@ function initTopbar() {
     lastScroll = current;
   }, { passive: true });
 
-  // Add/remove "scrolled" class when approaching the bottom
+  
   window.addEventListener('scroll', () => {
-    const scrollPosition = window.scrollY + window.innerHeight;
-    const triggerPoint = document.body.scrollHeight * 0.6;
+ 
 
     if (scrollPosition >= triggerPoint) {
       bar.classList.add('scrolled');
@@ -40,3 +39,30 @@ if (document.readyState === 'loading') {
 } else {
   initTopbar();
 }
+
+
+const btn = document.getElementById("mapsbtn");
+const wrapper = document.getElementById("maps-wrapper");
+
+let mapLoaded = false;
+
+btn.addEventListener("click", () => {
+  wrapper.classList.toggle("active");
+
+  if (!mapLoaded) {
+    // Only create iframe once, when first opening
+    wrapper.innerHTML = `
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1760.4081755432774!2d24.6392448!3d63.81792349999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x468133ba49a4b539%3A0x87501256e5e000c8!2sReisj%C3%A4rventie%20802%2C%2085470%20Sievi!5e0!3m2!1sfi!2sfi!4v1768995455875!5m2!1sfi!2sfi"
+        style="width: 100%; height: 100%; border: none; border-radius: 6px;"
+        allowfullscreen
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    `;
+    mapLoaded = true;
+  }
+  
+  // Update button text
+  btn.textContent = wrapper.classList.contains("active") ? "Sulje Google Maps" : "Avaa Google Maps";
+});
