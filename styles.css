@@ -3,6 +3,10 @@ body {
     font-family: sans-serif;
 }
 
+.bigguy {
+    min-height: 100vh;
+}
+
 .colori {
     color: #007bff;
 }
@@ -57,7 +61,10 @@ input[type="number"]::-webkit-outer-spin-button {
     width: 300px;
 }
 
-
+.yhteystiedot {
+    padding: 200px 10vw;
+    text-align: center;
+}
 
 html, body {
   margin: 0;
@@ -112,6 +119,9 @@ html, body {
     width: 315px;
 }
 
+#kysymys {
+    font-size: 70px;
+}
 
 #electricwater{
     width: 120%;
@@ -217,18 +227,19 @@ html, body {
     line-height: 1.05;
     white-space: normal;
     word-break: normal;
-
     color: #007bff;
+    text-shadow: 3px 3px 4px rgba(0,0,0,0.4);
 }
 
 #aloituslogo {
-    
+    padding-bottom: 50px;
     width: 850px;
+    
 }
 
 #aloitussidetext {
     font-size: xx-large;
-    
+    text-shadow: 3px 3px 4px rgba(0,0,0,0.4);
 }
 
 
@@ -369,6 +380,14 @@ a:hover {
     color: rgb(255, 255, 255);
 }
 
+#luotto {
+    width: 50%;
+}
+
+#luotto:hover {
+    opacity: 0.9;
+}
+
 @media screen and (max-width: 1220px) {
     #loppulogo {
         width: 90%;
@@ -489,6 +508,7 @@ a:hover {
 
     #miksitxt {
         font-size: 40px;
+        padding-right: 10px;
     }
 
     #kysymys {
@@ -533,7 +553,7 @@ a:hover {
 /* Alle 1024 */
 @media screen and (max-width: 1024px) {
     #aloituslogo {
-        width: 60vw;
+        width: 80vw;
     }
 
     #aloitusmaintext {
