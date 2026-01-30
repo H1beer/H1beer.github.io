@@ -13,29 +13,30 @@
     <title>Putkiwatti</title>
 </head>
 <body>
-    <div class="bigguy">
+<div class="bigguy">
+    <site-element type="topbar"></site-element>
         <!-- GALLERY COMPONENT -->
-<div class="gallery">
-  <div class="thumb-wrapper">
-    <button class="arrow left" onclick="scrollThumbs(-1)">&#10094;</button>
+    <div class="gallery">
+    <div class="thumb-wrapper">
+        <button class="arrow left" onclick="scrollThumbs(-1)">&#10094;</button>
 
-    <div class="thumbs" id="thumbs">
-      <img src="https://picsum.photos/id/1015/300/200" onclick="selectImage(this)">
-      <img src="https://picsum.photos/id/1016/300/200" onclick="selectImage(this)">
-      <img src="https://picsum.photos/id/1018/300/200" onclick="selectImage(this)">
-      <img src="https://picsum.photos/id/1020/300/200" onclick="selectImage(this)">
-      <img src="https://picsum.photos/id/1024/300/200" onclick="selectImage(this)">
+        <div class="thumbs" id="thumbs">
+        <img src="https://picsum.photos/id/1015/300/200" onclick="selectImage(this)">
+        <img src="https://picsum.photos/id/1016/300/200" onclick="selectImage(this)">
+        <img src="https://picsum.photos/id/1018/300/200" onclick="selectImage(this)">
+        <img src="https://picsum.photos/id/1020/300/200" onclick="selectImage(this)">
+        <img src="https://picsum.photos/id/1024/300/200" onclick="selectImage(this)">
+        </div>
+
+        <button class="arrow right" onclick="scrollThumbs(1)">&#10095;</button>
     </div>
 
-    <button class="arrow right" onclick="scrollThumbs(1)">&#10095;</button>
-  </div>
+    <div class="preview" id="preview">
+        <img src="https://picsum.photos/id/1015/600/400">
+    </div>
+    </div>
 
-  <div class="preview" id="preview">
-    <img src="https://picsum.photos/id/1015/600/400">
-  </div>
-</div>
-
-        <site-element type="topbar"></site-element>
+        
         
         <footer class="loppu">
             <div id="loppueka">

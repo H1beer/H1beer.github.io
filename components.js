@@ -16,29 +16,36 @@ class MySiteElements extends HTMLElement {
         if (type === 'topbar') {
             this.innerHTML = `
                 <div class="tb" id="tb">
-                    <div class="tb-logo">
-                    <a href="index.html">
-                        <img src="kuvat/putkiwattilogoval.png" alt="Putkiwatti">
-                    </a>
-                    </div>
-                    <div class="tb-lnk">
-                        <div>
+            <div class="tb-logo">
+                <a href="index.html">
+                    <img src="kuvat/putkiwattilogoval.png" alt="Putkiwatti">
+                </a>
+            </div>
+            <div class="burger">
+                <button class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+            <div class="tb-lnk" id="menu">
+                <div>
 
-                        </div>
-                        <div>
-
-                        </div>
-                        <div>
-                            <a href="index.html"><p>Aloitus</p></a>
-                        </div>
-                        <div id="galleria">
-                            <a href="galleria.html"><p>Galleria</p></a>
-                        </div>
-                        <div id="yhteys">
-                            <a href="yhteys.html"><p>Yhteystiedot</p></a>
-                        </div>
-                    </div>
                 </div>
+                <div>
+
+                </div>
+                <div>
+                    <a href="index.html"><p>Aloitus</p></a>
+                </div>
+                <div id="galleria">
+                    <a href="galleria.html"><p>Galleria</p></a>
+                </div>
+                <div id="yhteys">
+                    <a href="yhteys.html"><p>Yhteystiedot</p></a>
+                </div>
+            </div>
+        </div>
             `;
         } 
 

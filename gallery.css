@@ -1,9 +1,9 @@
 .gallery {
-    margin: 100px 0;
-    width: 100%;
-    font-family: sans-serif;
-    max-height: 90vh;
-    overflow: hidden;
+  margin: 100px 0;
+  width: 100%;
+  min-height: 60vh;
+  font-family: sans-serif;
+  overflow: hidden;
 }
 
 .thumb-wrapper {

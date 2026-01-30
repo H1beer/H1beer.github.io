@@ -4,7 +4,7 @@
     <meta name="robots" content="noindex, nofollow">
 
     <script src="script.js" defer></script>
-    <script src="components.js" defer></script>
+    <!-- <script src="components.js" defer></script> -->
    
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="form.css">
@@ -13,11 +13,43 @@
     <title>Putkiwatti</title>
 </head>
 <body>
+    
     <div class="bigguy">
-        <site-element type="topbar"></site-element>
+        <div class="tb" id="tb">
+            <div class="tb-logo">
+                <a href="index.html">
+                    <img src="kuvat/putkiwattilogoval.png" alt="Putkiwatti">
+                </a>
+            </div>
+            <div class="burger">
+                <button class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+            <div class="tb-lnk" id="menu">
+                <div>
+
+                </div>
+                <div>
+
+                </div>
+                <div>
+                    <a href="index.html"><p>Aloitus</p></a>
+                </div>
+                <div id="galleria">
+                    <a href="galleria.html"><p>Galleria</p></a>
+                </div>
+                <div id="yhteys">
+                    <a href="yhteys.html"><p>Yhteystiedot</p></a>
+                </div>
+            </div>
+        </div>
         <div class="aloitus">
+            <div class="aloitusclear"></div>
             <div class="aloituskuvat">
-                <img src="kuvat/putkimies.jpg" alt="putkimies">
+                <img src="kuvat/putkimies.jpg" alt="putkimies kuva">
             </div>
             <div class="aloitusjutut">
                 <div>
@@ -27,6 +59,76 @@
                 </div>
             </div>
         </div>
+        <div class="jokupaikka">
+            <div class="miksi">
+                <b><p style="padding-right: 20px;">Miksi </p></b>
+                <img src="kuvat/putkiwatti-valko.png" alt="putkiwatti" id="miksilogo" >
+                <b><p>?</p></b>
+            </div>
+            <div class="siksi">
+                <div class="hk-wrap">
+                    <div class="hk-col">
+                        <div class="hk-row">
+                        <div class="hk-pic">
+                            <img src="img/price.png" alt="">
+                        </div>
+                        <div class="hk-txt">Päläpääläpä</div>
+                        </div>
+
+                        <div class="hk-row">
+                        <div class="hk-pic">
+                            <img src="kuvat/elecwate.png" alt="sähkö ja vesi merkki" id="electricwater">
+                        </div>
+                        <div class="hk-txt">Sähkö- ja putkityöt saman katon alta</div>
+                        </div>
+
+                        <div class="hk-row">
+                        <div class="hk-pic">
+                            <img src="kuvat/valko-check.webp" alt="hyväksy merkki">
+                        </div>
+                        <div class="hk-txt">Ammattitaitoa</div>
+                        </div>
+
+                        <div class="hk-row">
+                        <div class="hk-pic">
+                            <img src="img/tools.png" alt="">
+                        </div>
+                        <div class="hk-txt">jjjooooo</div>
+                        </div>
+                    </div>
+
+                    <div class="hk-col">
+                        <div class="hk-row">
+                        <div class="hk-pic">
+                            <img src="img/thumb.png" alt="">
+                        </div>
+                        <div class="hk-txt">eeeee</div>
+                        </div>
+
+                        <div class="hk-row">
+                        <div class="hk-pic">
+                            <img src="img/tax.png" alt="">
+                        </div>
+                        <div class="hk-txt">vdvdv</div>
+                        </div>
+
+                        <div class="hk-row">
+                        <div class="hk-pic">
+                            <img src="img/money.png" alt="">
+                        </div>
+                        <div class="hk-txt">dfgdfgd</div>
+                        </div>
+
+                        <div class="hk-row">
+                        <div class="hk-pic">
+                            <img src="img/medal.png" alt="">
+                        </div>
+                        <div class="hk-txt">Kkyllä</div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
         <center>
         <div class="sivu">
             <p>Olemme LVI- ja sähköurakoija Sievistä ja</p>
@@ -111,7 +213,7 @@
         </div>
         <footer class="loppu">
             <div id="loppueka">
-                <img id="loppulogo" src="kuvat/putkiwatti-valko.png" alt="">
+                <img id="loppulogo" src="kuvat/putkiwatti-valko.png" alt="putkiwatti">
                 <p>Y-tunnus: 3498407-9</p>
                 <p>Reisjärventie 802</p>
                 <p>85470 SIEVI</p>

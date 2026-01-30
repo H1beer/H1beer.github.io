@@ -8,6 +8,7 @@ function initTopbar() {
   }
 
   let lastScroll = 0;
+  const triggerPoint = window.innerHeight;
 
   // Hide/show on scroll direction
   window.addEventListener('scroll', () => {
@@ -20,13 +21,8 @@ function initTopbar() {
     }
 
     lastScroll = current;
-  }, { passive: true });
 
-  
-  window.addEventListener('scroll', () => {
- 
-
-    if (scrollPosition >= triggerPoint) {
+    if (current >= triggerPoint) {
       bar.classList.add('scrolled');
     } else {
       bar.classList.remove('scrolled');
@@ -35,9 +31,42 @@ function initTopbar() {
 }
 
 if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', initTopbar);
+  document.addEventListener('DOMContentLoaded', () => {
+    initTopbar();
+    initHamburger();
+  });
 } else {
   initTopbar();
+  initHamburger();
+}
+
+function initHamburger() {
+  const hamburger = document.getElementById('hamburger');
+  const menu = document.getElementById('menu');
+  
+  if (!hamburger || !menu) {
+    requestAnimationFrame(initHamburger);
+    return;
+  }
+
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    menu.classList.toggle('active');
+  });
+
+  menu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      hamburger.classList.remove('active');
+      menu.classList.remove('active');
+    });
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!hamburger.contains(e.target) && !menu.contains(e.target)) {
+      hamburger.classList.remove('active');
+      menu.classList.remove('active');
+    }
+  });
 }
 
 
