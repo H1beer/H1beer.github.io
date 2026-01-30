@@ -99,6 +99,10 @@ html, body {
     bottom: 0px;
 }
 
+#miksitxt {
+    padding-right: 20px; 
+}
+
 .miksi img {
     position: relative;
     bottom: 4px;
@@ -107,6 +111,7 @@ html, body {
 #miksilogo {
     width: 315px;
 }
+
 
 #electricwater{
     width: 120%;
@@ -476,6 +481,23 @@ a:hover {
     .sivu {
         font-size: large;
         margin: 50px 20px;
+    }
+
+    .miksi {
+        
+    }
+
+    #miksitxt {
+        font-size: 40px;
+    }
+
+    #kysymys {
+        font-size: 40px;
+    }
+
+    .miksi img,
+    #miksilogo {
+        width: 200px;
     }
 
     .loppu {
