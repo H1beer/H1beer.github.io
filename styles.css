@@ -61,11 +61,6 @@ input[type="number"]::-webkit-outer-spin-button {
     width: 300px;
 }
 
-.yhteystiedot {
-    padding: 200px 10vw;
-    text-align: center;
-}
-
 html, body {
   margin: 0;
   padding: 0;
@@ -242,7 +237,30 @@ html, body {
     text-shadow: 3px 3px 4px rgba(0,0,0,0.4);
 }
 
+.yhteystiedot {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    padding-bottom: 100px;
+}
 
+.yhteystiedot p {
+    font-size: larger;
+}
+
+#yht-otsikko {
+    font-size: 100px;
+}
+
+.alinleft {
+    margin: 50px 0;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50vw;
+    text-align: left;
+}
 
 .tb {
     position: fixed;
@@ -518,6 +536,11 @@ a:hover {
     .miksi img,
     #miksilogo {
         width: 200px;
+    }
+
+    #yht-otsikko {
+        margin-top: 100px;
+        font-size: 15vw;
     }
 
     .loppu {
