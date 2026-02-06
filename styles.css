@@ -152,8 +152,8 @@ html, body {
 }
 
 .hk-pic {
-  width: 48px;
-  height: 48px;
+  width: 55px;
+  height: 55px;
   flex-shrink: 0;
 }
 
@@ -235,6 +235,11 @@ html, body {
 #aloitussidetext {
     font-size: xx-large;
     text-shadow: 3px 3px 4px rgba(0,0,0,0.4);
+}
+
+#spring {
+    transform: rotate(-35deg);
+
 }
 
 .yhteystiedot {
@@ -374,9 +379,38 @@ a:hover {
     width: 33.4vw;
     height: 100%;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
-    align-items: center;
+    align-items: left;
+    
+}
+
+#lopputokalogot {
+    height: 100%;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+#lopputokalogot img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.lopputokalogot {
+    height: 60px;
+    margin: 0 10px 0 auto;
+}
+
+#lopputokainfo {
+    height: 100%;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    line-break: normal;
 }
 
 #loppukolmas {
@@ -439,6 +473,10 @@ a:hover {
 #soita {
   width: 35px;
   transition: 0.3s;
+}
+
+#lopputokainfo {
+    font-size: 1.1vw;
 }
 
 #soita:hover #call {
@@ -554,6 +592,29 @@ a:hover {
     #loppukolmas {
         width: 100%;
         padding: 30px 20px;
+    }
+
+    #lopputoka {
+        display: flex;
+        align-items: center;
+    }
+
+    .lopputokalogot {
+        height: 40px;
+        margin: 0 10px 0 auto;
+    }
+
+    #lopputokalogot {
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: column;
+        height: 150px;
+        max-width: 50px;
+    }
+
+    #lopputokainfo {
+        max-width: 210px;
+        line-break: anywhere;
     }
 
     #loppulogo {
