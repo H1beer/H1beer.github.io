@@ -77,15 +77,44 @@ html, body {
     align-items: center;
 }
 
-.jokupaikka {
+.siksicontainer {
     width: 100vw;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.jokupaikka {
+    width: 100%;
+    max-width: 1500px;
+    min-width: 1100px;
     height: 630px;
-    background-color: #007bff;
+    background-color: #007bffe8;
     color: white;
     display: flex;
     align-items: center;
     flex-direction: column;
-    
+    z-index: 10;
+    position: relative;
+    background-color: transparent;
+    border-radius: 10px;
+}
+
+.jokupaikka::before {
+    content: "";
+    position: absolute;
+    inset: 10px;
+    background-color: #007bffe8;
+    filter: blur(3px);
+    z-index: -1;
+    border-radius: 10px;
+}
+
+.sivujuttu {
+    top: 100vh;
+    width: 40vw;
+    z-index: 100;
 }
 
 .jokupaikka p {
@@ -99,6 +128,7 @@ html, body {
     justify-content: center;
     position: relative;
     bottom: 0px;
+    margin-top: 20px;
 }
 
 #miksitxt {
@@ -123,18 +153,25 @@ html, body {
     height: 120%;
 }
 
+#luotettavuus {
+    margin-left: 5px;
+}
+
 .siksi {
     height: 60%;
     width: 100%;
 }
 
 .hk-wrap {
-  display: flex;
-  gap: 64px;
-  padding: 60px;
-  color: #fff;
+    display: flex;
+    gap: 6px;
+    padding: 30px;
+    color: #fff;
+    justify-content: center;
+    align-items: center;
 
 }
+
 
 .hk-col {
   display: flex;
@@ -172,18 +209,36 @@ html, body {
 
 .aloituskuvat {
     position: absolute;
+    inset: 0;
     top: 0;
     left: 0;
     width: 100vw;
-    z-index: -1;
+    z-index: 0;
 }
 
 .aloituskuvat img {
     position: absolute;
     width: 100%;
-    height: 90vh;
+    height: 100%;
     object-fit: cover;
     display: block;
+    z-index: 0;
+}
+
+.aloituskuvat::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom, 
+        rgba(255, 255, 255, 0) 97%, 
+        rgba(255, 255, 255, 1) 100%
+    );
+    z-index: 1;
+}
+
+.imageingcontainer {
+    position: relative;
 }
 
 #aloitusyhteys {
@@ -381,13 +436,12 @@ a:hover {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: left;
-    
+    align-items: center;
 }
+
 
 #lopputokalogot {
     height: 100%;
-    width: 30%;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -401,12 +455,13 @@ a:hover {
 
 .lopputokalogot {
     height: 60px;
-    margin: 0 10px 0 auto;
+    margin: 0 10px;
 }
 
 #lopputokainfo {
     height: 100%;
     width: 70%;
+    font-size: large;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -444,6 +499,10 @@ a:hover {
     #loppulogo {
         width: 90%;
     }
+
+    #lopputokainfo {
+        font-size: 15.5px;
+    }
 }
 
 #tb {
@@ -473,10 +532,6 @@ a:hover {
 #soita {
   width: 35px;
   transition: 0.3s;
-}
-
-#lopputokainfo {
-    font-size: 1.1vw;
 }
 
 #soita:hover #call {
@@ -524,7 +579,7 @@ a:hover {
 }
 
 .hamburger.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(7px, -7px);
+    transform: rotate(-45deg) translate(3.5px, -3.5px);
 }
 
 /* Alle 768 */
@@ -536,8 +591,13 @@ a:hover {
     }
 
     .jokupaikka {
-        height: 1000px;
+        height: 600px;
+        padding: 0 30px;
+        width: 80vw;
+        min-width: none;
+        max-width: none;
     }
+
 
     #aloitusmaintext {
         font-size: clamp(20px, 5vw, 36px);
@@ -698,7 +758,9 @@ a:hover {
         margin: 0;
     }
 
-
+    #lopputokainfo {
+        font-size: 11.5px;
+    }
 }
 
 /* Yli 1025 */
