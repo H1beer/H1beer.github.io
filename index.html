@@ -54,9 +54,14 @@
         <div class="imageingcontainer">
             <header class="aloitus">
                 <div class="aloitusclear"></div>
+                
                 <div class="aloituskuvat">
-                    <img src="kuvat/jokutehdas.webp" alt="putkimies kuva">
+                    <picture>
+                        <source media="(max-width: 1024px)" srcset="kuvat/Autot-Pystykuva.jpeg">
+                        <img src="kuvat/Autot.jpeg" alt="putkimies kuva">
+                    </picture>
                 </div>
+
                 <div class="aloitusjutut">
                     <div>
                         <img id="aloituslogo" src="kuvat/putkiwattilogoval.png" alt="Putkiwatti">
@@ -120,21 +125,34 @@
                 </div>
             </div>
         </div>
-        <p style="font-size: xx-large; color: red; position: absolute; top: 67px; left: 67px;">Väliaikainen kuva*</p>
         <center>
-        <div class="sivu">
-            <p>Olemme LVI- ja sähköurakoija Sievistä.</p>
-            <p>Toimimme Keski- ja Pohjois-Pohjanmaalla.</p>
-            <p>Kauttamme saat laadukkaat LVI- ja sähkötarvikkeet asennettuina.</p>
-            <p>Saumaton yhteistyö putki- ja sähkötöihin!</p>
-            <br>
-            <p>Teemme esimerkiksi:</p>
-            <p>Kaikenlaiset pienet ja suuret LVI ja sähkötyöt.</p>
-            <p>Uuden  omakotitalon LVI- ja sähköasennukset.</p>
-            <p>Lämpö- ja putkistoremontit omakotitaloihin ja taloyhtiöihin.</p>
-            <p>Ilmanvaihtokoneiden vaihto/huoltotyöt.</p>
-            <p>Myös ilmalämpöpumppujen asennukset. (mm. Mitsubishi, Gree, Midea)</p>
+        <div class="sivujutut">
+            <div id="tyomies">
+                <img class="pagekuvat" src="kuvat/tyomies.jpeg" alt="puhdistus">
+                <p>Ilmastoinnin puhdistus ja säätö</p>
+            </div>
+            <div class="sivu">
+                <p>Olemme LVI- ja sähköurakoija Sievistä.</p>
+                <p>Toimimme Keski- ja Pohjois-Pohjanmaalla.</p>
+                <p>Kauttamme saat laadukkaat LVI- ja sähkötarvikkeet asennettuina.</p>
+                <p>Saumaton yhteistyö putki- ja sähkötöihin!</p>
+                <br>
+                <b>
+                    <p>Teemme esimerkiksi:</p>
+                </b>
+                <p>Kaikenlaiset pienet ja suuret LVI ja sähkötyöt.</p>
+                <p>Uuden  omakotitalon LVI- ja sähköasennukset.</p>
+                <p>Lämpö- ja putkistoremontit omakotitaloihin ja taloyhtiöihin.</p>
+                <p>Ilmanvaihtokoneiden vaihto/huoltotyöt.</p>
+                <p>Myös ilmalämpöpumppujen asennukset. (mm. Mitsubishi, Gree, Midea)</p>
+            </div>
+            
+            <div id="kuvaus">
+                <img class="pagekuvat" src="kuvat/kuvaus.jpeg" alt="putken tarkastus">
+                <p style="line-break: auto; max-width: 350px;">Viemäri- ja ilmastointi kuvaukset laadukkaalla Forbest tarkastus kameralla</p>
+            </div>
         </div>
+
         </center>
         <div style="margin-bottom: 400px;">
             <div class="contact-wrapper">
@@ -240,6 +258,5 @@
         </footer>
     </div>
 </body>
-
 
 </html>

@@ -289,6 +289,7 @@ html, body {
 
 #aloitussidetext {
     font-size: xx-large;
+    color: white;
     text-shadow: 3px 3px 4px rgba(0,0,0,0.4);
 }
 
@@ -379,10 +380,32 @@ a:hover {
     color: #555555;
 }
 
+.sivujutut {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+}
+
+.pagekuvat {
+    max-width: 350px;
+    margin: 0 50px;
+}
+
+#tyomies {
+
+}
+
+#kuvaus {
+    
+}
+
+
+
 
 
 .sivu {
-    font-size: x-large;
+    font-size: larger;
     margin: 100px 0;
 }
 
@@ -496,6 +519,27 @@ a:hover {
 }
 
 @media screen and (max-width: 1220px) {
+    .sivujutut {
+    
+    }
+
+    .pagekuvat {
+        max-width: 200px;
+        margin: 0 50px;
+    }
+
+    #tyomies {
+
+    }
+
+    #kuvaus {
+        
+    }
+
+
+
+
+
     #loppulogo {
         width: 90%;
     }
@@ -707,6 +751,25 @@ a:hover {
     #aloitussidetext {
         font-size: large;
     }
+
+
+    .sivujutut {
+        
+    }
+
+    .pagekuvat {
+        max-width: 200px;
+        margin: 0 50px;
+    }
+
+    #tyomies {
+
+    }
+
+    #kuvaus {
+        
+    }
+
 
     .lopputekstit {
         width: 85vw;
