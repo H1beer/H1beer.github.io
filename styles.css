@@ -755,7 +755,7 @@ a:hover {
 
 
     .sivujutut {
-        
+        flex-direction: column;
     }
 
     .pagekuvat {
