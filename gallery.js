@@ -1,20 +1,41 @@
-const thumbs = document.querySelectorAll(".thumbs img");
-const previewImg = document.querySelector("#preview img");
+const hub = document.getElementById('photo-hub');
+const viewer = document.getElementById('desktop-viewer');
+const viewerImg = document.getElementById('viewer-img');
+const closeBtn = document.getElementById('close-btn');
+const total = 40;
 
-function selectImage(img) {
-  // Remove active state from all thumbnails
-  thumbs.forEach(t => t.classList.remove("active"));
+for (let i = 1; i <= total; i++) {
+    const img = document.createElement('img');
+    img.src = `kuvat/galleria/${i}.jpeg`;
+    
+    img.onclick = function() {
+        const isDesktop = window.innerWidth > 1024; // Check screen size
 
-  // Set active thumbnail
-  img.classList.add("active");
+        if (isDesktop) {
+            // Desktop Split Screen Magic
+            viewer.style.display = 'block';
+            viewerImg.src = this.src;
+            hub.style.width = '50%'; // Pushes gallery to the right
+        } else {
+            // Mobile Expansion Magic
+            const isExpanded = this.classList.contains('mobile-expanded');
+            
+            // Shrink any currently expanded mobile images
+            document.querySelectorAll('.gallery-grid img').forEach(el => {
+                el.classList.remove('mobile-expanded');
+            });
 
-  // Update large image
-  previewImg.src = img.src;
+            if (!isExpanded) {
+                this.classList.add('mobile-expanded');
+                this.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        }
+    };
+    hub.appendChild(img);
 }
 
-// Set first image as active by default
-thumbs[0].classList.add("active");
-
-function scrollThumbs(direction) {
-  document.getElementById("thumbs").scrollLeft += direction * 200;
-}
+// Closing the desktop viewer
+closeBtn.onclick = function() {
+    viewer.style.display = 'none';
+    hub.style.width = '100%'; // Gallery takes back the whole screen
+};

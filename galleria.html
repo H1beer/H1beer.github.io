@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="UTF-8">
     <script src="script.js" defer></script>
     <script src="components.js" defer></script>
-    <script src="gallery.js" defer></script>
+    <script src="galleryy.js" defer></script>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="gallery.css">
     <meta charset="UTF-8">
@@ -46,27 +46,62 @@
         </div>
     </div>
         <!-- GALLERY COMPONENT -->
-    <div class="gallery">
-    <div class="thumb-wrapper">
-        <button class="arrow left" onclick="scrollThumbs(-1)">&#10094;</button>
-
-        <div class="thumbs" id="thumbs">
-        <img src="kuvat/kylpyhuone.jpg" onclick="selectImage(this)">
-        <img src="kuvat/ilmanlmpumppu.jpg" onclick="selectImage(this)">
-        <img src="https://picsum.photos/id/1018/300/200" onclick="selectImage(this)">
-        <img src="https://picsum.photos/id/1020/300/200" onclick="selectImage(this)">
-        <img src="https://picsum.photos/id/1024/300/200" onclick="selectImage(this)">
-        </div>
-
-        <button class="arrow right" onclick="scrollThumbs(1)">&#10095;</button>
+<div id="gallery-wrapper">
+    <div id="desktop-viewer">
+        <img id="viewer-img" src="" alt="Selected">
     </div>
 
-    <div class="preview" id="preview">
-        <img src="https://picsum.photos/id/1015/600/400">
-    </div>
-    </div>
+    <div class="gallery-grid" id="photo-hub"></div>
+</div>
 
-        
+
+<script>
+const wrapper = document.getElementById('gallery-wrapper');
+const hub = document.getElementById('photo-hub');
+const viewerImg = document.getElementById('viewer-img');
+const total = 40;
+
+var rndmnumbr = Math.floor(Math.random() * 40 + 1)
+
+for (let i = 1; i <= total; i++) {
+    const img = document.createElement('img');
+    img.src = `kuvat/galleria/${i}.jpeg`;
+    img.loading = "lazy"; 
+
+
+    
+    
+    // Auto-load the first image into the desktop viewer so it isn't empty
+    if (i === rndmnumbr) {
+        viewerImg.src = img.src;
+        viewerImg.style.display = 'block';
+    }
+    
+    img.onclick = function() {
+        const isDesktop = window.innerWidth > 1024;
+
+        if (isDesktop) {
+            // Update the left side, no expanding nonsense
+            viewerImg.src = this.src;
+            viewerImg.style.display = 'block';
+        } else {
+            // Mobile magic: stays exactly the same
+            const isExpanded = this.classList.contains('mobile-expanded');
+            
+            document.querySelectorAll('.gallery-grid img').forEach(el => {
+                el.classList.remove('mobile-expanded');
+            });
+
+            if (!isExpanded) {
+                this.classList.add('mobile-expanded');
+                this.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        }
+    };
+    hub.appendChild(img);
+}
+</script>
+        <!-- End of gallery -->
         
         <footer class="loppu">
             <div id="loppueka">
