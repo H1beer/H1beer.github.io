@@ -38,6 +38,17 @@
     object-fit: contain;
 }
 
+/* --- UNDER 1024px: Smaller images with 3:4 ratio --- */
+@media (max-width: 1023px) {
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    }
+
+    .gallery-grid img {
+        height: auto;
+        aspect-ratio: 3 / 4;
+    }
+}
 
 /* --- DESKTOP (The Split Reality) --- */
 @media (min-width: 1024px) {

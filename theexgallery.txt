@@ -1,0 +1,85 @@
+   <div class="gallery">
+    <div class="thumb-wrapper">
+        <button class="arrow left" onclick="scrollThumbs(-1)">&#10094;</button>
+
+        <div class="thumbs" id="thumbs">
+        <img src="kuvat/galleria/kylpyhuone.jpg" onload="selectImage(this)" onclick="selectImage(this)">
+        </div>
+
+        <button class="arrow right" onclick="scrollThumbs(1)">&#10095;</button>
+    </div>
+
+    <div class="preview" id="preview">
+        <img src="kuvat/galleria/kylpyhuone.jpg">
+    </div>
+    </div>
+
+    .gallery {
+  margin: 100px 0;
+  width: 100%;
+  min-height: 60vh;
+  font-family: sans-serif;
+  overflow: hidden;
+}
+
+.thumb-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.thumbs {
+  display: flex;
+  overflow-x: auto;
+  gap: 10px;
+  padding: 10px;
+  scroll-behavior: smooth;
+}
+
+.thumbs img {
+  height: 80px;
+  cursor: pointer;
+  border-radius: 6px;
+  opacity: 0.6;
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+.thumbs img:hover {
+  transform: scale(1.05);
+}
+
+.thumbs img.active {
+  opacity: 1;
+  outline: 3px solid #007bff;
+}
+
+.arrow {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 0 10px;
+}
+
+.preview {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.preview img {
+  width: 80vw;
+  max-height: 90vh;
+  height: auto;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+
+const container = document.getElementById('thumbs');
+const totalImages = 40;
+
+for (let i = 1; i <= totalImages; i++) {
+    const img = document.createElement('img');
+    img.src = `kuvat/galleria/${i}.jpeg`;
+    img.onclick = function() { selectImage(this); };
+    container.appendChild(img);
+}
