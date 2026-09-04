@@ -995,16 +995,24 @@
             episodeInput.value = currentEpisode;
         }
 
+        function reloadPlayer(url) {
+            const player = document.getElementById("videoPlayer");
+            player.src = BLANK_PAGE;
+            window.setTimeout(() => {
+                player.src = url;
+            }, 0);
+        }
+
         function updatePlayer() {
             if (!currentId) {
-                document.getElementById("videoPlayer").src = BLANK_PAGE;
+                reloadPlayer(BLANK_PAGE);
                 return;
             }
 
             let displayTitle = currentTitle || allMedia.find(s => s.id === currentId)?.title || "Unknown";
 
             if (embedsDisabledSession) {
-                document.getElementById("videoPlayer").src = BLANK_PAGE;
+                reloadPlayer(BLANK_PAGE);
                 document.getElementById("episodeText").innerText = `${displayTitle} (Embed Disabled)`;
                 return;
             }
@@ -1034,7 +1042,7 @@
                 recordHistory({ id: currentId, title: displayTitle, type: 'movie' });
             }
 
-            document.getElementById("videoPlayer").src = finalUrl;
+            reloadPlayer(finalUrl);
         }
 
         // --- Initialization Sequence ---
